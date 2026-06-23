@@ -3,793 +3,876 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chase Flow Yoga Studio | Professional Yoga Classes</title>
+    <title>Chase Flow Yoga | Premium Online Yoga & Meditation Studio</title>
     <style>
         :root {
-            --primary: #4A6B62;
-            --primary-dark: #375149;
-            --accent: #D4A373;
-            --bg-light: #FAEDCD;
-            --text-dark: #2F3E46;
-            --text-light: #FFFFFF;
-            --gray-bg: #F4F6F6;
-            --border-color: #E5E7E9;
+            --brand-primary: #5A7670;
+            --brand-dark: #2C3E3A;
+            --brand-accent: #E2B28A;
+            --bg-canvas: #FAF9F6;
+            --bg-card: #FFFFFF;
+            --text-main: #33413E;
+            --text-muted: #6B7C77;
+            --border-soft: #E5EAE8;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
         }
 
         body {
-            background-color: #FFFFFF;
+            background-color: var(--bg-canvas);
+            line-height: 1.6;
         }
 
-        /* Top Notification Bar */
-        .promo-bar {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        
-        .promo-bar a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Header & Navigation */
+        /* Navigation Banner */
         header {
-            background: #FFFFFF;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-soft);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
-        .header-container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--primary);
+            letter-spacing: 1px;
+            color: var(--brand-primary);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        nav {
+        .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
         }
 
-        nav a {
+        .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
             font-size: 15px;
-            cursor: pointer;
-            transition: color 0.3s;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--primary);
+        .nav-links a:hover {
+            color: var(--brand-primary);
         }
 
-        .phone-btn {
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s;
+        .btn-trial {
+            background-color: var(--brand-primary);
+            color: #ffffff !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
         }
 
-        .phone-btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
+        .btn-trial:hover {
+            background-color: var(--brand-dark);
         }
 
-        /* Main Content App Engine */
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active-page {
-            display: block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Hero Component */
-        .hero {
-            background: linear-gradient(rgba(74, 107, 98, 0.08), rgba(74, 107, 98, 0.03)), url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            padding: 100px 20px;
+        /* Hero Portal */
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 58, 0.4), rgba(44, 62, 58, 0.2)), url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            padding: 120px 20px;
             text-align: center;
+            color: #ffffff;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .hero h1 {
-            font-size: 42px;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            font-weight: 700;
+        .hero-content h1 {
+            font-size: 36px;
+            color: var(--brand-dark);
+            margin-bottom: 15px;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
+        .hero-content p {
+            color: var(--text-muted);
             font-size: 16px;
-            transition: all 0.3s;
+            margin-bottom: 25px;
+        }
+
+        /* Content Catalog Module */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            padding: 8px 18px;
+            border-radius: 20px;
             cursor: pointer;
-            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--text-dark);
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+            border-color: var(--brand-primary);
         }
 
-        .btn-primary:hover {
-            background-color: #c59263;
-        }
-
-        .btn-secondary {
-            background-color: var(--primary);
-            color: var(--text-light);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Quick Call Banner */
-        .call-banner {
-            background-color: var(--gray-bg);
-            border-left: 5px solid var(--primary);
-            padding: 25px;
-            margin: 40px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .call-banner h3 {
-            margin-bottom: 10px;
-            color: var(--primary-dark);
-        }
-
-        /* Grid Layouts */
-        .grid-3 {
+        /* Dynamic Class Grid */
+        .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
+        .video-card {
+            background: var(--bg-card);
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        .video-card:hover {
+            transform: translateY(-4px);
         }
 
-        .card-img {
+        .thumb-wrapper {
+            position: relative;
+            height: 180px;
+            background-color: #ddd;
+        }
+
+        .thumb-img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 25px;
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 2px 6px;
+            font-size: 12px;
+            border-radius: 4px;
         }
 
-        .card-content h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 20px;
+        .card-body {
+            padding: 20px;
         }
 
-        /* Layout Elements & Content Styles */
-        h2 {
+        .card-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--brand-accent);
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--brand-dark);
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Paywall Architecture Pricing Panel */
+        .pricing-section {
+            background-color: var(--brand-dark);
+            padding: 8px 20px 80px 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            color: #ffffff;
             font-size: 32px;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            text-align: center;
+            margin: 60px 0 10px 0;
         }
 
-        .section-desc {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-            font-size: 16px;
-            color: #666;
+        .pricing-section .sub-title {
+            color: #A3B5B1;
+            margin-bottom: 40px;
         }
 
-        .split-layout {
+        .pricing-grid {
+            max-width: 900px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            gap: 30px;
         }
 
-        .split-img {
-            width: 100%;
+        .price-card {
+            background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
         }
 
-        /* Table Mechanics */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 15px;
+        .price-card * {
+            color: var(--text-main);
         }
 
-        .data-table th, .data-table td {
-            border: 1px solid var(--border-color);
-            padding: 14px 18px;
+        .price-card.popular {
+            border: 3px solid var(--brand-accent);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--brand-accent);
+            color: var(--brand-dark);
+            padding: 4px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 12px;
+        }
+
+        .plan-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+        }
+
+        .price-amt {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .price-amt span {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
             text-align: left;
         }
 
-        .data-table th {
-            background-color: var(--primary);
-            color: var(--text-light);
+        .features-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-soft);
+            color: #555;
         }
 
-        .data-table tr:nth-child(even) {
-            background-color: var(--gray-bg);
+        .btn-action {
+            display: block;
+            background-color: var(--brand-primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
         }
 
-        /* Contact Page Configurations */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        .btn-action:hover {
+            background-color: var(--brand-dark);
+            color: #fff;
         }
 
-        .info-panel {
-            background-color: var(--gray-bg);
-            padding: 40px;
-            border-radius: 8px;
+        /* FAQ Container Accordion */
+        .faq-section {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
 
-        .info-item {
-            margin-bottom: 25px;
+        .faq-section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--brand-dark);
         }
 
-        .info-item h4 {
-            color: var(--primary);
-            margin-bottom: 5px;
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 18px 20px;
             font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .info-item p {
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .contact-form {
+            font-weight: 600;
+            cursor: pointer;
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--brand-primary);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease-out;
+            background-color: #FAFBFB;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 20px 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-soft);
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--brand-dark);
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        /* Direct Info Styling Links */
+        .direct-info-box {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--brand-primary);
+            background: var(--bg-canvas);
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: 1px solid var(--border-soft);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .info-link:hover {
+            background-color: var(--brand-primary);
+            color: #ffffff;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            padding: 12px;
-            border: 1px solid #CCCCCC;
-            border-radius: 4px;
-            font-size: 15px;
-            width: 100%;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* Educational Article Layout */
-        .knowledge-base {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .knowledge-base h3 {
-            font-size: 24px;
-            color: var(--primary-dark);
-            margin: 40px 0 15px 0;
-            border-bottom: 2px solid var(--gray-bg);
-            padding-bottom: 8px;
-        }
-
-        .knowledge-base h4 {
-            font-size: 19px;
-            color: var(--primary);
-            margin: 25px 0 10px 0;
-        }
-
-        .knowledge-base p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            color: #3A4750;
-            text-align: justify;
-        }
-
-        .knowledge-base ul {
-            margin-bottom: 25px;
-            padding-left: 25px;
-        }
-
-        .knowledge-base li {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #3A4750;
-        }
-
-        .diagram-box {
-            background-color: var(--gray-bg);
-            border: 1px dashed var(--primary);
-            padding: 20px;
-            border-radius: 6px;
-            margin: 30px 0;
-            text-align: center;
-            font-family: monospace;
-            white-space: pre-wrap;
-            font-size: 14px;
-            color: var(--primary-dark);
-        }
-
-        /* Footer Architecture */
-        footer {
-            background-color: #2F3E46;
-            color: #DFE3E6;
-            padding: 50px 20px 20px 20px;
-            margin-top: 80px;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            border-bottom: 1px solid #4F5E66;
-            padding-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #B2BCC2;
-            text-decoration: none;
-            margin-bottom: 12px;
             display: block;
             font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        .footer-col a:hover {
-            color: var(--accent);
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+            background-color: var(--bg-canvas);
+            font-size: 15px;
         }
 
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 20px;
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--brand-primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--brand-dark);
+        }
+
+        /* Legal Documents / Footer Modals */
+        footer {
+            background-color: var(--brand-dark);
+            padding: 40px 20px;
             text-align: center;
-            font-size: 13px;
-            color: #929DA4;
+            border-top: 1px solid #3d524e;
         }
 
-        /* Responsive Breakpoints */
+        footer p, footer a {
+            color: #A3B5B1;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-accent);
+            text-decoration: underline;
+        }
+
+        /* Simulation Video Player Overlay */
+        .player-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .player-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #000;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-icon {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Legal Popup Windows */
+        .legal-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .legal-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .legal-box {
+            background: white;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 70vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .legal-box h3 {
+            margin-bottom: 15px;
+            color: var(--brand-dark);
+        }
+
         @media (max-width: 768px) {
-            .split-layout, .contact-grid {
+            .pricing-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 30px;
+            .nav-links a:not(.btn-trial) {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="promo-bar">
-        Need assistance? Call an instructor directly right now: <a href="tel:+19725594519">+19725594519</a>
-    </div>
-
+    <!-- Header -->
     <header>
-        <div class="header-container">
-            <a onclick="showPage('home')" class="logo">🍃 Chase Flow Yoga</a>
-            <nav id="main-nav">
-                <a onclick="showPage('home')" class="nav-link active" id="nav-home">Home</a>
-                <a onclick="showPage('about')" class="nav-link" id="nav-about">About Us</a>
-                <a onclick="showPage('education')" class="nav-link" id="nav-education">Yoga Guide</a>
-                <a onclick="showPage('contact')" class="nav-link" id="nav-contact">Contact Us</a>
-                <a onclick="showPage('privacy')" class="nav-link" id="nav-privacy">Privacy Policy</a>
-                <a href="tel:+19725594519" class="phone-btn">📞 +19725594519</a>
+        <div class="nav-container">
+            <a href="#" class="logo">Chase Flow Yoga</a>
+            <nav class="nav-links">
+                <a href="#catalog">Classes</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="#pricing" class="btn-trial">Free Trial</a>
             </nav>
         </div>
     </header>
 
-    <main id="page-home" class="page-section active-page">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Reclaim Your Calm. Strengthen Your Body. Discover Chase Flow Yoga.</h1>
-                <p>Premium, beginner-friendly yoga classes designed to melt stress away, build core stability, and restore physical balance. Claim your $30 introductory week today.</p>
-                <div class="cta-group">
-                    <a onclick="showPage('contact')" class="btn btn-primary">Book Your First Class</a>
-                    <a href="tel:+19725594519" class="btn btn-secondary">Call Instructor: +19725594519</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Your Premium Online Yoga Sanctuary</h1>
+            <p>Stream over 500+ masterclasses designed by world-renowned instructors. Practice anytime, anywhere, at your unique experience level.</p>
+            <a href="#pricing" class="btn-action" style="display:inline-block; padding: 12px 35px; border-radius: 25px;">Unlock Full Membership</a>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <main class="catalog-container" id="catalog">
+        <div class="section-header">
+            <h2>Explore Online Classes</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterCategory('all', this)">All Practices</button>
+                <button class="tab-btn" onclick="filterCategory('vinyasa', this)">Vinyasa</button>
+                <button class="tab-btn" onclick="filterCategory('yin', this)">Yin & Restorative</button>
+                <button class="tab-btn" onclick="filterCategory('meditation', this)">Meditation</button>
+            </div>
+        </div>
+
+        <div class="video-grid" id="videoGrid">
+            <div class="video-card" data-category="vinyasa" onclick="launchVideoPlayer('Morning Energy Activation Flow')">
+                <div class="thumb-wrapper">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80" class="thumb-img" alt="Yoga">
+                    <span class="video-duration">30 Min</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">Vinyasa • Level 1-2</div>
+                    <div class="card-title">Morning Energy Activation Flow</div>
+                    <div class="card-meta">With Clara Roberts-Oss</div>
                 </div>
             </div>
-        </section>
 
-        <div class="container">
-            <div class="call-banner">
-                <h3>Need help finding the right class for your fitness level?</h3>
-                <p>Talk directly to a certified instructor right now to map out your structural wellness goals. Speak to us live at <strong><a href="tel:+19725594519" style="color: var(--primary-dark); text-decoration: underline;">+19725594519</a></strong> for immediate programmatic recommendations.</p>
+            <div class="video-card" data-category="yin" onclick="launchVideoPlayer('Deep Release Wall Yin Matrix')">
+                <div class="thumb-wrapper">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" class="thumb-img" alt="Yoga">
+                    <span class="video-duration">45 Min</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">Yin Yoga • All Levels</div>
+                    <div class="card-title">Deep Release Wall Yin Matrix</div>
+                    <div class="card-meta">With Master David Kim</div>
+                </div>
             </div>
 
-            <h2>Our Core Studio Class Offerings</h2>
-            <p class="section-desc">Our classes are built for everyday people looking for structural clarity, physical health, and mental restoration.</p>
+            <div class="video-card" data-category="meditation" onclick="launchVideoPlayer('Neuro-Calming Breath Reset')">
+                <div class="thumb-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=400&q=80" class="thumb-img" alt="Yoga">
+                    <span class="video-duration">15 Min</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-tag">Meditation • Beginner</div>
+                    <div class="card-title">Neuro-Calming Breath Reset</div>
+                    <div class="card-meta">With Elena Brower</div>
+                </div>
+            </div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Vinyasa Flow Class" class="card-img">
-                    <div class="card-content">
-                        <h3>Vinyasa Flow (All Levels)</h3>
-                        <p>A dynamic practice that links breath with rhythmic movement. You will flow through sequences designed to build lean cardiovascular stamina, functional core power, and deep physical flexibility.</p>
-                    </div>
+            <div class="video-card" data-category="vinyasa" onclick="launchVideoPlayer('Core Balance and Inversion Preparation')">
+                <div class="thumb-wrapper">
+                    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=400&q=80" class="thumb-img" alt="Yoga">
+                    <span class="video-duration">60 Min</span>
                 </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Restorative Yoga" class="card-img">
-                    <div class="card-content">
-                        <h3>Restorative & Yin Yoga</h3>
-                        <p>The ultimate antidote to chronic stress and sedentary office posture. This slow-paced practice utilizes deep positions held for longer durations to penetrate deep connective tissues and release joint tension.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1510894347580-fc4d2fc08463?auto=format&fit=crop&w=600&q=80" alt="Beginners Yoga Instruction" class="card-img">
-                    <div class="card-content">
-                        <h3>Gentle Beginners Foundation</h3>
-                        <p>Never stepped onto a yoga mat before? This class breaks down fundamental alignment rules from the ground up. Learn exactly how to balance weight safely and build immediate structural confidence.</p>
-                    </div>
+                <div class="card-body">
+                    <div class="card-tag">Power Vinyasa • Advanced</div>
+                    <div class="card-title">Core Balance and Inversion Prep</div>
+                    <div class="card-meta">With Patrick Beach</div>
                 </div>
             </div>
         </div>
     </main>
 
-    <main id="page-about" class="page-section">
-        <div class="container">
-            <h2>About Chase Flow Yoga Studio</h2>
-            <p class="section-desc">Discover the core values, expert certified instructors, and local mission driving our fitness space forward.</p>
+    <!-- Pricing Pass Panel -->
+    <section class="pricing-section" id="pricing">
+        <h2>Simple, Transparent Access Plans</h2>
+        <p class="sub-title">All memberships include an initial 7-day complementary cancellation window.</p>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="plan-name">Monthly Pass</div>
+                <div class="price-amt">$18<span> / month</span></div>
+                <ul class="features-list">
+                    <li>✓ Unlimited HD Streaming Access</li>
+                    <li>✓ Filter by intensity, teacher, & length</li>
+                    <li>✓ Access via Phone, Tablet, & Laptop</li>
+                    <li>✕ Offline local video downloads</li>
+                </ul>
+                <a href="#" class="btn-action">Start 7-Day Free Trial</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="badge">BEST SAVINGS</div>
+                <div class="plan-name">Annual Sanctuary</div>
+                <div class="price-amt">$120<span> / year</span></div>
+                <ul class="features-list">
+                    <li>✓ Everything included in Monthly Pass</li>
+                    <li>✓ Saves 45% compared to monthly rate</li>
+                    <li>✓ Premium Masterclass Challenges</li>
+                    <li>✓ Offline local video storage access</li>
+                </ul>
+                <a href="#" class="btn-action" style="background-color: var(--brand-dark);">Subscribe Annually</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">How does the 7-day free trial work?</button>
+            <div class="faq-answer">
+                <p>You get complete, unrestricted access to our entire video catalog for 7 days. If you cancel before the trial ends, you won't be charged a single penny.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I stream classes on my TV?</button>
+            <div class="faq-answer">
+                <p>Yes! Our video player perfectly supports webcasting via Google Chromecast, Apple AirPlay, and smart device screen mirroring solutions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Are there classes suitable for absolute beginners?</button>
+            <div class="faq-answer">
+                <p>Absolutely. We offer an extensive collection of introductory courses focusing on alignment, breathing techniques, and fundamental movements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Contact Our Support Team</h2>
+            <p>Have questions about your billing setup or class routines? Reach out directly using our contact methods below or send us an inquiry form.</p>
             
-            <div class="split-layout">
-                <div>
-                    <h3>Our Core Mission</h3>
-                    <p style="margin-bottom: 15px; text-align: justify;">At Chase Flow Yoga, we believe yoga is not a performance sport or an elite flexibility contest. It is a practical, accessible framework for physical longevity and mental resilience. Founded on the principle that modern lifestyles place an unnatural burden of stress on our bodies, our studio acts as a functional laboratory for physical decompression.</p>
-                    <p style="margin-bottom: 15px; text-align: justify;">We cater explicitly to corporate workers, athletes looking for recovery, active seniors, and raw beginners who feel intimidated by mainstream gym metrics. Our classes prioritize individual bone alignment over aesthetic perfection.</p>
-                    <p style="font-weight: bold; color: var(--primary-dark);">Questions about our lineage or teachers? Call us at +19725594519 to speak directly with an operations lead.</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=800&q=80" alt="Yoga Teachers at Chase Flow Yoga Studio" class="split-img">
-                </div>
+            <!-- Direct Info Links -->
+            <div class="direct-info-box">
+                <a href="tel:+19725594519" class="info-link">📞 Call: +1 (972) 559-4519</a>
+                <a href="mailto:paul12ka42@gmail.com" class="info-link">✉️ Email: paul12ka42@gmail.com</a>
             </div>
-        </div>
-    </main>
 
-    <main id="page-education" class="page-section">
-        <div class="container">
-            <h2>The Chase Flow Yoga Comprehensive Blueprint to Modern Hatha & Vinyasa Yoga</h2>
-            <p class="section-desc">An extensive, anatomically rigorous textbook compiled by our senior instructional staff to guide your journey into alignment, physiology, and stress resilience.</p>
-            
-            <article class="knowledge-base">
-                <h3>Section 1: The Physiology of Yoga — How Asana Practice Restructures Your Body</h3>
-                <p>The word asana translates from Sanskrit to mean "steady, comfortable seat." In modern biomechanical terms, it refers to the physical postures utilized in a yoga sequence to stimulate internal biological systems. Far from being a simple stretching routine, yoga forces the human body through unique vectors of isometric contraction and eccentric lengthening.</p>
-                <p>When you hold a posture like Warrior II or a plank variant, your muscle groups are placed under a calculated, sustained load. This triggers a localized recruitment of muscle fibers without changing the length of the tissue under stress. This specific form of isometric exercise causes an increase in intramuscular pressure. This temporary occlusion of blood flow to targeted regions is followed by a subsequent rush of freshly oxygenated, nutrient-dense blood upon releasing the pose, known scientifically as the reperfusion phenomenon. This deep circulatory flush actively aids in flushing out metabolic waste products from deep muscular tissues, dramatically shortening recovery times for individuals who perform high-intensity weight training or suffer from chronic desk-bound stiffness.</p>
-                <p>Furthermore, the physical manipulation of the body structural tissue layer—the fascia—is central to long-term mobility. Fascia is a web of connective tissue, composed primarily of collagen and elastin fibers, that encloses muscles, organs, and nerves. When the body remains sedentary for long periods, this fascia dehydrates and forms microscopic cross-links, binding muscles together and creating a feeling of systemic stiffness. The long, continuous holds practiced in deep yoga positions break these restrictive bonds down, encouraging the production of hyaluronic acid, which acts as an internal joint lubricant. Over months of consistent execution, this alters the physical tissue architecture of your body, creating sustainable mobility that protects against typical age-related joint deterioration.</p>
-
-                <div class="diagram-box">
-[Targeted Isometric Stress] ---> [Microvascular Occlusion] ---> [Release/Reperfusion Flush] ---> [Myofascial Restructuring]
+            <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" required placeholder="Jane Doe">
                 </div>
-
-                <h3>Section 2: Overcoming Lower Back Pain and Desk Posture via Targeted Yoga Postures</h3>
-                <p>In modern society, the average adult spends between 8 to 11 hours per day seated in front of a digital interface. This sedentary positioning places the musculoskeletal system into a structurally compromised state characterized by postural kyphosis (rounding of the upper thoracic spine), anterior rotation of the pelvis, and severe adaptive shortening of the iliopsoas and rectus femoris muscle groups (the hip flexors). When the hip flexors remain in a chronically shortened state, they pull hard against the lumbar vertebrae, creating a mechanical imbalance that manifests as chronic lower back ache. Yoga directly combats this structural decay through targeted extension postures.</p>
-                
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Muscle Group</th>
-                            <th>Postural Problem Caused by Sitting</th>
-                            <th>Corrective Yoga Posture</th>
-                            <th>Biomechanical Mechanism</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Iliopsoas (Hip Flexors)</strong></td>
-                            <td>Chronically shortened; pulls pelvis forward into pain loops.</td>
-                            <td>Anjaneyasana (Low Lunge)</td>
-                            <td>Eccentrically elongates the anterior hip line, resetting pelvic tilt.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pectoralis Major</strong></td>
-                            <td>Collapsed inward; rounds shoulders and causes neck strain.</td>
-                            <td>Bhujangasana (Cobra Pose)</td>
-                            <td>Isometrically strengthens deep upper back erectors while opening chest wall tissues.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Gluteus Maximus</strong></td>
-                            <td>Gluteal amnesia; deactivates completely, forcing lower back to overwork.</td>
-                            <td>Setu Bandha Sarvangasana (Bridge)</td>
-                            <td>Forces neuro-muscular reactivation of the posterior chain, taking stress off lumbar discs.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p>By practicing these specific vectors of movement multiple times a week, individuals can systematically undo the structural damage inflicted by modern lifestyle environments, preventing long-term degenerative disc issues. Our introductory classes focus specifically on repairing these muscle firing pathways. If you suffer from severe disk herniation, please let our instructors know prior to booking by dialing +19725594519 so we can plan your individual pose variations in advance.</p>
-
-                <h3>Section 3: The Neurological Mechanism — Deep Breathing and the Autonomic Nervous System</h3>
-                <p>The true cornerstone of Chase Flow Yoga is the conscious synchronization of movement with breath, known technically as Pranayama. To appreciate the value of this practice, one must look closely at the mechanics of the vagus nerve—the main superhighway of the parasympathetic nervous system (PNS). Most individuals living under chronic corporate stress operate in a constant, low-grade state of sympathetic nervous system activation (the "fight-or-flight" response). This results in chronically elevated cortisol levels, shallow thoracic breathing, elevated resting heart rates, and impaired digestion.</p>
-                <p>When you switch to a deep, diaphragmatic breathing pattern—specifically extending the length of your exhalations relative to your inhalations—you immediately change the mechanics of your heart. During deep inhalation, the diaphragm drops, changing thoracic pressure and slightly accelerating heart rate. During exhalation, the diaphragm rises, stimulating the vagus nerve to release an inhibitory neurotransmitter known as acetylcholine. This compound directly binds to the sinoatrial node of your heart, signaling your resting pulse to drop, blood vessel walls to dilate, and systemic inflammation to down-regulate. This shift from sympathetic dominance to parasympathetic dominance is visible in real-time on heart-rate variability (HRV) metrics.</p>
-
-                <div class="diagram-box">
-[Inhalation: Slight Heart Acceleration] ---> [Extended Exhalation: Vagal Nerve Stimulation] ---> [Heart Rate Deceleration]
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" required placeholder="jane@example.com">
                 </div>
-
-                <p>This down-regulation has immense long-term wellness implications. Chronic cortisol exposure degrades the structural lining of the gastrointestinal tract, interferes with sleep cycles, and hinders deep muscular repair. By dedicating 60 minutes to structured, breath-linked movement, you effectively provide your nervous system with a clean reboot. Over time, this trains your brain to handle psychological anxiety with greater emotional balance, transforming how you respond to real-world crises outside the yoga studio environment.</p>
-
-                <h3>Section 4: Choosing Your Style — From Kinetic Athleticism to Pure Restorative Solace</h3>
-                <p>Because human bodies exist in widely varying states of conditioning and stress capitalization, a one-size-fits-all approach to yoga inevitably leads to injury or disinterest. Understanding the unique stylistic divisions allows an individual to match their practice to their immediate biological needs.</p>
-                
-                <h4>Ashtanga and Power Vinyasa: The Kinetic Forge</h4>
-                <p>For individuals who require heavy physical exertion to quiet an overactive mind, Ashtanga and modern Power Vinyasa represent a robust athletic challenge. This style follows rigorous, structured sequences requiring continuous upper-body weight-bearing movements, core stabilization transitions, and deep jumps. It is a powerful tool for weight management, athletic conditioning, and cardiovascular enhancement. Sweat is utilized as a vehicle for purification, and the intensive cardiovascular demand ensures that muscle groups are thoroughly exhausted, promoting deep sleep patterns later that night.</p>
-
-                <h4>Hatha Yoga: The Foundation of Symmetry</h4>
-                <p>Hatha practices prioritize structural alignment over speed. Postures are held statically for 5 to 10 full breaths, allowing the instructor to safely adjust your joints and helping the practitioner develop a highly focused mind-body awareness. Hatha is the perfect style for older adults, individuals recovering from sports injuries, and beginners who wish to master the foundational mechanics of balance. Here, we analyze the micro-movements of the body: how the feet ground down, how the core engages to support the lumbar spine, and how the neck aligns with the rest of the spine.</p>
-
-                <h4>Yin Yoga: The Fascial Release</h4>
-                <p>Unlike muscularly driven styles, Yin yoga targets the dense, non-elastic tissues of the body: the deep ligaments, joint capsules, bone interfaces, and fascial networks. There is no active muscular engagement in Yin. Practitioners allow gravity to pull them into deep floor stretches for extended intervals (typically three to five minutes per posture). This slow, steady tension coaxes the collagen fibers within fascia to safely lengthen, restoring an immense range of motion to stiff hips and lower backs that standard stretching cannot touch. It is highly meditative and deeply internal, requiring significant mental presence to remain still within long holds.</p>
-
-                <h3>Section 5: Step-by-Step Biomechanical Breakdown of Essential Poses</h3>
-                <p>To ensure your safety when practicing at home or preparing for our studio environment, let us systematically dissect the architectural mechanics of four foundational yoga movements.</p>
-
-                <h4>1. Adho Mukha Svanasana (Downward-Facing Dog)</h4>
-                <p>Primary Objective: Decompression of the entire spinal column paired with dynamic hamstrings lengthening. To execute this pose correctly, start on your hands and knees in a tabletop position. Your hands must be placed slightly forward of your shoulders, with your fingers spread incredibly wide across your mat space. Press down firmly through the index finger knuckle and the thumb base to take pressure away from the delicate carpal tunnel structures in your wrist.</p>
-                <p>As you tuck your toes and lift your knees off the floor, lift your sit bones high up toward the ceiling, drawing your torso back toward your thighs. Rotate your outer arms inward toward your ears (external shoulder rotation). This clears the acromion process away from your rotator cuff tendons, completely avoiding shoulder impingement. Do not worry about keeping your legs completely straight. If your hamstrings are tight, keep a generous bend in your knees so your lower back does not round. Your ears should be aligned between your upper arms, and your gaze should rest softly between your feet.</p>
-
-                <h4>2. Trikonasana (Triangle Pose)</h4>
-                <p>Primary Objective: Lateral spinal flexion and deep opening of the outer hips (abductors) and inner thighs (adductors). From a standing position, step your feet wide apart—roughly the length of one of your legs. Set your front foot pointing directly forward, with your back foot turned inward to roughly a 45-degree angle. Align your front heel cleanly with the arch of your back foot.</p>
-                <p>Extend your arms out wide into a T-shape, then reach forward long through your front hand, tilting at your hip crease rather than rounding your side waist. Lower your front hand down gently onto your shin, a yoga block, or the floor, while extending your top arm straight up toward the sky. Keep both sides of your waist equally long. Avoid leaning all your body weight onto your lower arm; instead, engage your core muscles to support your torso weight. Turn your chin upward to look at your top thumb, keeping your neck long and comfortable.</p>
-
-                <h4>3. Chaturanga Dandasana (Four-Limbed Staff Pose)</h4>
-                <p>Primary Objective: Building deep isometric stability in the core, serratus anterior, and triceps. This pose is the foundation of modern vinyasa transitions, yet it is frequently executed incorrectly, leading to chronic shoulder strain. Start in a high plank position with your hands directly under your shoulders and your body forming a straight line from your head to your heels.</p>
-                <p>Shift your weight forward onto your tiptoes so your shoulders move past your wrist lines. As you exhale, bend your elbows straight back, keeping them pinned tightly against the sides of your ribs. Lower your body down smoothly until your upper arms are perfectly parallel to the floor. Crucial Safety Warning: Never allow your shoulders to dip lower than the level of your elbows. Dropping too low places a severe, destructive shearing force on the anterior labrum of your shoulder joint. Keep your core tight, your legs active, and your gaze slightly forward of your mat.</p>
-
-                <h4>4. Virabhadrasana II (Warrior II Pose)</h4>
-                <p>Primary Objective: Developing structural endurance in the quadriceps while opening the pelvic floor musculature. Step your feet wide apart on your mat space. Turn your front foot to face forward completely, and turn your back foot slightly inward. Bend your front knee deeply until it sits directly over your ankle at a 90-degree angle, making sure your thigh is moving toward parallel with the floor.</p>
-                <p>Ensure your front knee tracks directly in line with your second toe, preventing it from collapsing inward, which can strain the medial collateral ligament. Press firmly through the outer edge of your back foot to keep your back leg active. Extend your arms out forcefully into a clean horizontal line parallel to your floor space, and gaze out softly over your front middle finger. Draw your belly button inward toward your spine to stabilize your lower lumbar region and prevent an unnatural over-arching of your lower back.</p>
-
-                <h3>Section 6: Overcoming Mental Barriers — Mindfulness and Stress Management</h3>
-                <p>The real magic of yoga happens when the physical challenge of a posture meets the calm control of the mind. In moments of intense physical challenge—such as holding a difficult balance or enduring a deep hip opener—our natural instinct is to tense up, clench the jaw, and hold our breath. This physical reaction mimics exactly how we react to real-world stressors like a difficult corporate email or a sudden financial challenge.</p>
-                <p>By maintaining a steady, rhythmic breathing pattern when a pose gets tough, you teach your brain a vital neurological lesson: I can experience discomfort without going into panic. This practice systematically restructures your amygdala—the brain's fear and emotional center—reducing your day-to-day emotional reactivity. Over weeks of practice, you will find that the same stability you cultivate on the yoga mat naturally carries over into your daily life, helping you stay grounded, levelheaded, and resilient in our fast-paced modern world.</p>
-                <p>Ready to experience this transformation firsthand? Contact our studio today at +19725594519 to speak directly with an instructor who can guide you to the perfect starting class for your current fitness level.</p>
-            </article>
-        </div>
-    </main>
-
-    <main id="page-contact" class="page-section">
-        <div class="container">
-            <h2>Contact Chase Flow Yoga</h2>
-            <p class="section-desc">Reach out directly to book your space, speak with an instructor, or ask about our beginner specials.</p>
-            
-            <div class="contact-grid">
-                <div class="info-panel">
-                    <h3>Get In Touch Instantly</h3>
-                    <p style="margin-bottom: 30px;">We are here to help answer your questions about alignment, pricing, or facilities. Give us a call today!</p>
-                    
-                    <div class="info-item">
-                        <h4>Direct Phone Line</h4>
-                        <p><a href="tel:+19725594519" style="color: var(--primary); text-decoration: none;">+19725594519</a></p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Studio Email</h4>
-                        <p>paul12ka42@gmail.com</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Physical Location</h4>
-                        <p>100 Wellness Way, Suite 250, Dallas, TX 75201</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Operating Hours</h4>
-                        <p>Mon - Fri: 5:30 AM – 9:00 PM CST<br>Sat & Sun: 7:00 AM – 4:00 PM CST</p>
-                    </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea class="form-control" rows="5" required placeholder="How can we help you?"></textarea>
                 </div>
-
-                <div>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="john@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="(972) 559-4519" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Select Experience Level</label>
-                            <select>
-                                <option>Absolute Beginner (Never practiced)</option>
-                                <option>Intermediate (Some knowledge)</option>
-                                <option>Advanced Practitioner</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Your Message / Injury History</label>
-                            <textarea placeholder="Tell us how we can help you build your yoga journey..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Inquiry & Book Class</button>
-                    </form>
-                </div>
-            </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
         </div>
-    </main>
+    </section>
 
-    <main id="page-privacy" class="page-section">
-        <div class="container" style="max-width: 800px;">
-            <h2>Privacy Policy</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: #777;"></p>
-            
-            <div style="display: flex; flex-direction: column; gap: 20px; font-size: 15px; color: #3A4750;">
-                <p><strong>1. Information Collection:</strong> We collect explicit personal metrics when you interact with our platform. This data profile includes your name, your direct email coordinates, your phone number (+19725594519), and any specific digital tracking metrics collected during your browsing experience.</p>
-                
-                <p><strong>2. How Your Information Is Handled:</strong> Your personal information is used exclusively to fast-track your class reservation requests, deliver real-time schedule adjustments, and maximize the performance metrics of our local Google Ads marketing campaigns. We maintain a strict zero-tolerance policy regarding data monetization; we will never sell, rent, or distribute your private contact details to external third-party entities.</p>
-                
-                <p><strong>3. Google Ads and Tracking Disclosures:</strong> Our website utilizes tracking features including Google Analytics, remarketing pixels, and conversion tracking cookies. These digital frameworks use cookies to analyze user behavior on our site and serve tailored advertisements based on your past visits to our domain. You can easily manage your data preferences or opt-out of targeted Google ads by updating your account settings via the Google Ads Preferences Manager.</p>
-                
-                <p><strong>4. Direct Telephone Communication Policies:</strong> By sharing your phone number with us through our contact paths, you provide explicit permission for Chase Flow Yoga Studio to contact you directly at <strong>+19725594519</strong> via voice calls or direct text messages regarding class schedules, account billing updates, and studio milestones.</p>
-
-                <p>If you have any questions regarding this policy statement or wish to have your data permanently scrubbed from our active marketing records, please contact our privacy compliance team directly at +19725594519.</p>
-            </div>
-        </div>
-    </main>
-
+    <!-- Footer System -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Chase Flow Yoga</h3>
-                <p>Your local sanctuary for anatomical alignment, physical fitness, structural restoration, and sustainable stress relief.</p>
-                <p style="font-weight: bold; color: #FFFFFF; margin-top: 15px;">Call Us: +19725594519</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Navigation Links</h3>
-                <a onclick="showPage('home')">Home Page</a>
-                <a onclick="showPage('about')">About Our Studio</a>
-                <a onclick="showPage('education')">Complete Yoga Guide</a>
-                <a onclick="showPage('contact')">Contact & Bookings</a>
-                <a onclick="showPage('privacy')">Privacy Policy</a>
-            </div>
-            <div class="footer-col">
-                <h3>Google Ads Disclaimer</h3>
-                <p>Results from yoga practice may vary based on individual genetic traits, prior injury conditions, and consistency of execution. Always consult your medical physician before beginning any physical exercise framework.</p>
-            </div>
+        <div class="footer-links">
+            <a href="#" onclick="event.preventDefault(); openLegal('terms')">Terms & Conditions</a>
+            <a href="#" onclick="event.preventDefault(); openLegal('privacy')">Privacy Policy</a>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Chase Flow Yoga Studio. All Rights Reserved. Designed for Google Ads Compliance.
-        </div>
+        <p>&copy; 2026 Chase Flow Yoga. All rights reserved.</p>
     </footer>
 
+    <!-- Video Player Simulation Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closePlayer()">×</button>
+            <div class="video-placeholder">
+                <span class="play-icon">▶</span>
+                <p id="modalVideoTitle" style="color: #fff; font-size: 18px; font-weight: 500;"></p>
+                <p style="color: #666; font-size: 13px; margin-top: 5px;">[Adaptive HLS Streaming Engine Pipeline Online]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Documents Modals -->
+    <div class="legal-modal" id="termsModal">
+        <div class="legal-box">
+            <button class="close-modal" onclick="closeLegal()" style="color:#000;">×</button>
+            <h3>Terms & Conditions</h3>
+            <p style="font-size:14px; margin-bottom:10px;">Welcome to Chase Flow Yoga. By accessing our video streaming membership services, you agree to comply with our billing rules and terms of usage. All video content hosted on this application remains protected by copyright law.</p>
+            <p style="font-size:14px;">Subscriptions auto-renew every month unless cancelled via your personal profile dashboard settings at least 24 hours prior to the next billing matrix cycle date.</p>
+        </div>
+    </div>
+
+    <div class="legal-modal" id="privacyModal">
+        <div class="legal-box">
+            <button class="close-modal" onclick="closeLegal()" style="color:#000;">×</button>
+            <h3>Privacy Policy</h3>
+            <p style="font-size:14px; margin-bottom:10px;">We take data privacy metrics seriously. Chase Flow Yoga uses cookies to secure session profiles, maintain watch histories, and run payment portals safely via Stripe integration frameworks.</p>
+            <p style="font-size:14px;">We never trade, sell, or distribute user identification matrices or email contact channels to third-party advertising companies.</p>
+        </div>
+    </div>
+
+    <!-- UI Scripts -->
     <script>
-        function showPage(pageId) {
-            // Hide all active content views
-            const pages = document.querySelectorAll('.page-section');
-            pages.forEach(page => {
-                page.classList.remove('active-page');
+        function filterCategory(category, button) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            document.querySelectorAll('.video-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
+        }
 
-            // Display requested view
-            const activePage = document.getElementById('page-' + pageId);
-            if (activePage) {
-                activePage.classList.add('active-page');
-            }
+        function launchVideoPlayer(title) {
+            document.getElementById('modalVideoTitle').innerText = title;
+            document.getElementById('playerModal').classList.add('active');
+        }
 
-            // Reset navigation state styles
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
+        function closePlayer() {
+            document.getElementById('playerModal').classList.remove('active');
+        }
+
+        /* FAQ Dropdown Controller Engine */
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const answer = button.nextElementSibling;
+                
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = null;
+                    item.classList.remove('active');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    item.classList.add('active');
+                }
             });
+        });
 
-            const currentNavLink = document.getElementById('nav-' + pageId);
-            if (currentNavLink) {
-                currentNavLink.classList.add('active');
-            }
-
-            // Smooth scroll up to top of screen on page load
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        /* Legal Overlays */
+        function openLegal(type) {
+            if(type === 'terms') document.getElementById('termsModal').classList.add('active');
+            if(type === 'privacy') document.getElementById('privacyModal').classList.add('active');
+        }
+        function closeLegal() {
+            document.getElementById('termsModal').classList.remove('active');
+            document.getElementById('privacyModal').classList.remove('active');
         }
     </script>
 </body>
