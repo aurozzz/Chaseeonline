@@ -115,6 +115,67 @@
             margin-bottom: 25px;
         }
 
+        /* About & Mission Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 80px auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--brand-dark);
+            margin-bottom: 15px;
+        }
+
+        .about-text .mission-statement {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            border-left: 4px solid var(--brand-accent);
+            padding-left: 15px;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .about-card h3 {
+            font-size: 18px;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
         /* Content Catalog Module */
         .catalog-container {
             max-width: 1200px;
@@ -600,12 +661,22 @@
             color: var(--brand-dark);
         }
 
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
             .nav-links a:not(.btn-trial) {
                 display: none;
+            }
+            .about-features {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -617,6 +688,7 @@
         <div class="nav-container">
             <a href="#" class="logo">Chase Flow Yoga</a>
             <nav class="nav-links">
+                <a href="#about">About Us</a>
                 <a href="#catalog">Classes</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
@@ -632,6 +704,38 @@
             <h1>Your Premium Online Yoga Sanctuary</h1>
             <p>Stream over 500+ masterclasses designed by world-renowned instructors. Practice anytime, anywhere, at your unique experience level.</p>
             <a href="#pricing" class="btn-action" style="display:inline-block; padding: 12px 35px; border-radius: 25px;">Unlock Full Membership</a>
+        </div>
+    </section>
+
+    <!-- About Us & Mission Section -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>About Chase Flow Yoga</h2>
+                <div class="mission-statement">
+                    Our Mission: To make world-class yoga training, mindful movement, and deep breathwork accessible to every body, everywhere—igniting inner strength and sustainable peace.
+                </div>
+                <p>Welcome to your home for daily transformation. Chase Flow Yoga was conceptualized as a welcoming alternative to standard fitness environments. We bridge ancient yogic wisdom with flexible digital infrastructure so your personal practice adapts flawlessly to modern life.</p>
+                <p>Whether your goal is physical exploration, mobility rejuvenation, or mental stabilization, our ever-evolving video archive serves as an inclusive framework for self-discovery.</p>
+            </div>
+            <div class="about-features">
+                <div class="about-card">
+                    <h3>Empowered Freedom</h3>
+                    <p>Build your schedule with curated sequence matrices varying dynamically from 15 to 60 minutes long.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Vetted Guidance</h3>
+                    <p>Every dynamic flow and subtle meditation is guided cleanly by accredited expert global practitioners.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Holistic Longevity</h3>
+                    <p>Balance intense modern performance demands with grounded restore sequences for physical preservation.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Fluid Support</h3>
+                    <p>Access immediate live multi-channel messaging solutions whenever account configuration questions manifest.</p>
+                </div>
+            </div>
         </div>
     </section>
 
