@@ -3,731 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chase Yoga | Stream Free Yoga Classes, Programs & Challenges</title>
+    <title>Solution2 | Premier Digital Marketing Agency</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* CSS RESET & VARIABLES */
         :root {
-            --dywm-orange: #E07A5F;
-            --dywm-teal: #3D5A80;
-            --dywm-navy: #293241;
-            --dywm-sage: #F4F1DE;
-            --bg-site: #FDFDFB;
-            --bg-card: #FFFFFF;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --border-clean: #EBEBEB;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-dark);
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--bg-site);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
             line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        /* Top Notification Bar */
-        .promo-banner {
-            background-color: var(--dywm-teal);
-            color: #FFFFFF;
-            text-align: center;
-            padding: 8px 20px;
-            font-size: 14px;
-            font-weight: 500;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
-        .promo-banner a { color: var(--dywm-sage); font-weight: 700; text-decoration: none; }
 
-        /* Navigation Header */
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* HEADER & NAVIGATION */
         header {
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border-clean);
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 80px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--dywm-teal);
-            text-decoration: none;
+            color: var(--secondary);
         }
-        .logo span { color: var(--dywm-orange); }
+
+        .logo span {
+            color: var(--primary);
+        }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             align-items: center;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            font-size: 15px;
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .phone-nav {
             font-weight: 600;
-            color: var(--dywm-navy);
+            color: var(--primary);
         }
 
-        .nav-links a:hover { color: var(--dywm-orange); }
-
-        .btn-join-free {
-            background-color: var(--dywm-orange);
-            color: #FFFFFF !important;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 700;
-        }
-
-        /* Hero / Video Library Catalog Dashboard */
-        .hero-streaming {
-            background: linear-gradient(rgba(41, 50, 65, 0.5), rgba(41, 50, 65, 0.3)), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            padding: 140px 20px;
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
             text-align: center;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            color: #FFFFFF;
         }
 
-        .hero-content h1 {
-            font-size: 46px;
-            color: #FFFFFF;
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
             margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
 
-        .hero-content p {
-            color: var(--dywm-sage);
-            font-size: 20px;
-            margin-bottom: 35px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--dywm-orange);
-            color: white;
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .btn-secondary {
-            background-color: #FFFFFF;
-            color: var(--dywm-navy);
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        /* Content Filter Sorting Bar */
-        .filter-section {
-            background-color: var(--dywm-sage);
-            padding: 25px 20px;
-            border-bottom: 1px solid var(--border-clean);
-        }
-
-        .filter-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .filter-label {
-            font-weight: 700;
-            color: var(--dywm-navy);
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .filter-select {
-            padding: 10px 15px;
-            border: 1px solid #CCD0D2;
-            border-radius: 4px;
-            background: #FFFFFF;
-            font-size: 14px;
-            min-width: 160px;
-            cursor: pointer;
-        }
-
-        /* Class Library Streaming Matrix Grid */
-        .catalog-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .block-title {
-            font-size: 28px;
-            color: var(--dywm-navy);
-            margin-bottom: 30px;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .class-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .class-card {
-            background: var(--bg-card);
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid var(--border-clean);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
-            position: relative;
-        }
-
-        .class-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .video-thumbnail {
-            height: 175px;
-            position: relative;
-            background-color: #eee;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .badge-access {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #fff;
-        }
-
-        .badge-free { background-color: #2A9D8F; }
-        .badge-plus { background-color: var(--dywm-orange); }
-
-        .class-duration {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(0,0,0,0.75);
-            color: white;
-            padding: 2px 6px;
-            font-size: 12px;
-            border-radius: 3px;
-        }
-
-        .class-meta-body {
-            padding: 20px;
-        }
-
-        .class-instructor {
-            font-size: 13px;
-            color: var(--dywm-orange);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .class-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--dywm-navy);
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .class-specs {
-            font-size: 13px;
+        .hero p {
+            font-size: 18px;
             color: var(--text-light);
-            border-top: 1px solid var(--border-clean);
-            padding-top: 10px;
-            display: flex;
-            justify-content: space-between;
+            margin-bottom: 40px;
         }
 
-        /* Challenges & Multi-Week Programs Row */
-        .programs-banner {
-            background-color: var(--dywm-navy);
-            padding: 80px 20px;
-            color: white;
-        }
-
-        .programs-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .programs-container h2 { color: white; margin-bottom: 10px; }
-        .programs-container p { color: var(--dywm-sage); margin-bottom: 40px; }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .program-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 6px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .program-card h3 { color: white; font-size: 22px; margin-bottom: 10px; }
-        .program-card p { color: #CBD5E0; font-size: 15px; margin-bottom: 20px; }
-
-        /* Custom Support Contact Desk Modules */
-        .contact-desk {
-            max-width: 700px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .contact-desk h2 { text-align: center; color: var(--dywm-navy); margin-bottom: 10px; }
-        .contact-desk p { text-align: center; color: var(--text-light); margin-bottom: 35px; }
-
-        .direct-channels {
+        .hero-btns {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 35px;
             flex-wrap: wrap;
         }
 
-        .channel-link {
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--dywm-teal);
-            background: #F0F4F8;
-            padding: 12px 22px;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: background 0.2s;
+        /* SERVICES SECTION */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
         }
-        .channel-link:hover { background-color: #E1E9F0; }
 
-        .form-row {
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 36px;
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
-        .input-box {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #D1D5DB;
-            border-radius: 4px;
-            font-size: 15px;
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--secondary);
         }
 
-        .btn-submit-stream {
-            width: 100%;
-            background-color: var(--dywm-teal);
-            color: white;
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* CTA SECTION */
+        .cta-banner {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0b0f19;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul flex-direction: column {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-links button {
+            background: none;
             border: none;
-            padding: 14px;
-            font-weight: 750;
-            text-transform: uppercase;
-            border-radius: 4px;
+            color: #94a3b8;
             cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
         }
-        .btn-submit-stream:hover { background-color: var(--dywm-navy); }
 
-        /* Legal Overlays System (Modals) */
-        .legal-overlay {
+        .legal-links button:hover {
+            color: var(--white);
+        }
+
+        /* MODAL POPUPS FOR LEGAL PAGES */
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(41, 50, 65, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 200;
-            display: flex;
-            align-items: center;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1000;
             justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-        }
-        .legal-overlay.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .legal-window {
-            background-color: var(--bg-card);
-            width: 90%;
-            max-width: 650px;
-            max-height: 80vh;
-            border-radius: 6px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .legal-header {
-            padding: 20px 25px;
-            background-color: var(--dywm-navy);
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--dywm-orange);
+            padding: 20px;
         }
-        .legal-header h3 { color: #FFFFFF; font-size: 20px; }
-        .close-btn {
-            background: none;
-            border: none;
-            color: #FFFFFF;
-            font-size: 26px;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .close-btn:hover { color: var(--dywm-orange); }
-        .legal-body {
-            padding: 25px;
+
+        .modal-content {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
             overflow-y: auto;
-            font-size: 14px;
-            color: #444444;
-        }
-        .legal-body h4 {
-            margin: 20px 0 8px 0;
-            color: var(--dywm-navy);
-            font-size: 16px;
-        }
-        .legal-body h4:first-of-type { margin-top: 0; }
-        .legal-body p { margin-bottom: 15px; color: #555555; }
-        .legal-body ul { margin: 0 0 15px 20px; }
-        .legal-body li { margin-bottom: 6px; color: #555555; }
-
-        /* Footer Pipeline */
-        footer {
-            background-color: #1F2421;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 4px solid var(--dywm-orange);
+            position: relative;
         }
 
-        footer p, footer a { color: #999999; font-size: 14px; text-decoration: none; }
-        .footer-nav { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
-        .footer-nav a { cursor: pointer; font-weight: 500; }
-        .footer-nav a:hover { color: #ffffff; text-decoration: underline; }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+        }
 
+        .modal h2 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .modal h3 {
+            margin: 20px 0 10px;
+            color: var(--secondary);
+        }
+
+        .modal p {
+            margin-bottom: 15px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 768px) {
-            .program-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .nav-links a:not(.btn-join-free) { display: none; }
-            .hero-content h1 { font-size: 32px; }
+            .nav-links {
+                display: none; /* Simplify for standard HTML snippet */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Notification Bar -->
-    <div class="promo-banner">
-        🎉 New Challenge: <strong>The 14-Day Vinyasa Reset</strong> is now streaming live! <a href="#programs">Join Program</a>
-    </div>
-
-    <!-- Navigation Header -->
+    <!-- HEADER / NAVIGATION -->
     <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Chase<span>Yoga</span></a>
+        <div class="container nav-container">
+            <a href="#" class="logo">Solution<span>2</span></a>
             <nav class="nav-links">
-                <a href="#library">Classes</a>
-                <a href="#programs">Programs</a>
-                <a href="#contact">Contact Support</a>
-                <a href="#contact" class="btn-join-free">Join For Free</a>
+                <a href="#services">Services</a>
+                <a href="tel:+19725594519" class="phone-nav"><i class="fa-solid fa-phone"></i> +1 (972) 559-4519</a>
+                <a href="tel:+19725594519" class="btn btn-primary">Free Consultation</a>
             </nav>
         </div>
     </header>
 
-    <!-- Custom Hero Interface -->
-    <section class="hero-streaming">
-        <div class="hero-content">
-            <h1>Do Yoga With Us. Anywhere.</h1>
-            <p>Access hundreds of premier streaming classes, custom meditations, and guided tracking programs completely free.</p>
-            <div class="hero-actions">
-                <a href="#library" class="btn-primary">Browse Free Library</a>
-                <a href="#programs" class="btn-secondary">View 3-Week Challenges</a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>We Scale Brands Globally Through ROI-Driven Digital Marketing</h1>
+            <p>At Solution2, we engineer tailored marketing campaigns that generate high-quality leads, supercharge revenue growth, and scale your brand identity.</p>
+            <div class="hero-btns">
+                <a href="tel:+19725594519" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call +1 (972) 559-4519</a>
+                <a href="#services" class="btn btn-secondary">Explore Our Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Context Filtering Action Bar Array -->
-    <section class="filter-section">
-        <div class="filter-container">
-            <span class="filter-label">Find Your Practice:</span>
-            
-            <select class="filter-select" id="levelFilter" onchange="applyLibraryFilters()">
-                <option value="all">Any Experience Level</option>
-                <option value="beginner">Beginner Profiles</option>
-                <option value="intermediate">Intermediate Sequences</option>
-                <option value="advanced">Advanced Masters</option>
-            </select>
-
-            <select class="filter-select" id="styleFilter" onchange="applyLibraryFilters()">
-                <option value="all">Any Yoga Style</option>
-                <option value="vinyasa">Vinyasa Flow</option>
-                <option value="hatha">Traditional Hatha</option>
-                <option value="yin">Yin / Restorative</option>
-            </select>
-
-            <select class="filter-select">
-                <option>Any Duration</option>
-                <option>Under 20 Minutes</option>
-                <option>20 - 45 Minutes</option>
-                <option>Over 45 Minutes</option>
-            </select>
-        </div>
-    </section>
-
-    <!-- Main Content Catalog Framework -->
-    <main class="catalog-section" id="library">
-        <div class="block-title">
-            <span>Featured Streaming Classes</span>
-        </div>
-
-        <div class="class-grid" id="libraryGrid">
-            <!-- Card 1 -->
-            <div class="class-card" data-level="beginner" data-style="hatha">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" alt="Yoga">
-                    <span class="badge-access badge-free">Free</span>
-                    <span class="class-duration">25 Min</span>
-                </div>
-                <div class="class-meta-body">
-                    <div class="class-instructor">Fiona Crossley</div>
-                    <div class="class-title">Foundation Alignment Matrix for Beginners</div>
-                    <div class="class-specs">
-                        <span>Hatha</span>
-                        <span>Level: Beginner</span>
-                    </div>
-                </div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specialized Solutions</h2>
+                <p>Data-driven strategies designed to crush your competitors and dominate your market vertical.</p>
             </div>
-
-            <!-- Card 2 -->
-            <div class="class-card" data-level="intermediate" data-style="vinyasa">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=400&q=80" alt="Yoga">
-                    <span class="badge-access badge-plus">Sustainer</span>
-                    <span class="class-duration">45 Min</span>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Search Engine Optimization</h3>
+                    <p>Dominate Google search results. We optimize your technical framework and content architecture to capture organic transactional traffic.</p>
                 </div>
-                <div class="class-meta-body">
-                    <div class="class-instructor">David Kim</div>
-                    <div class="class-title">Fluid Solar Plexus Core Power Vinyasa</div>
-                    <div class="class-specs">
-                        <span>Vinyasa</span>
-                        <span>Level: Intermediate</span>
-                    </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    <h3>Paid Search & Social Ads</h3>
+                    <p>Stop wasting money on broken ad budgets. Our targeted PPC campaigns turn advertising spend into predictable, scaling revenue pipelines.</p>
                 </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="class-card" data-level="advanced" data-style="vinyasa">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80" alt="Yoga">
-                    <span class="badge-access badge-free">Free</span>
-                    <span class="class-duration">60 Min</span>
-                </div>
-                <div class="class-meta-body">
-                    <div class="class-instructor">Rachel Scott</div>
-                    <div class="class-title">Advanced Inversion Mastery Blueprint</div>
-                    <div class="class-specs">
-                        <span>Vinyasa</span>
-                        <span>Level: Advanced</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="class-card" data-level="intermediate" data-style="yin">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=400&q=80" alt="Yoga">
-                    <span class="badge-access badge-free">Free</span>
-                    <span class="class-duration">35 Min</span>
-                </div>
-                <div class="class-meta-body">
-                    <div class="class-instructor">Melissa Krieger</div>
-                    <div class="class-title">Deep Fascia Melt Wall Yin Release</div>
-                    <div class="class-specs">
-                        <span>Yin</span>
-                        <span>Level: Intermediate</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Multi-Week Programs Integration Module -->
-    <section class="programs-banner" id="programs">
-        <div class="programs-container">
-            <h2>Guided Step-By-Step Programs</h2>
-            <p>Take the guesswork out of your layout routines with systematic pipelines built for real wellness progression.</p>
-            
-            <div class="program-grid">
-                <div class="program-card">
-                    <div>
-                        <h3>The 14-Day Foundation Blueprint</h3>
-                        <p>Perfect for total beginners looking to establish an uncompromising structural daily habit safely.</p>
-                    </div>
-                    <a href="#contact" class="btn-primary" style="align-self: flex-start; margin-top:20px;">Start Program</a>
-                </div>
-
-                <div class="program-card">
-                    <div>
-                        <h3>Deep Restorative Sleep Pathway</h3>
-                        <p>A multi-instructor collection of premium evening meditations and sub-structural somatic recovery routines.</p>
-                    </div>
-                    <a href="#contact" class="btn-secondary" style="align-self: flex-start; margin-top:20px;">View Lessons</a>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Conversion Rate Optimization</h3>
+                    <p>Turn casual visitors into brand advocates. We continuously refine user paths to squeeze maximum profitability out of your existing web traffic.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Operations System Frame -->
-    <section class="contact-desk" id="contact">
-        <h2>Connect with Streaming Support</h2>
-        <p>Experiencing streaming frame errors or have questions about account credentials? Reach out to our technical helpdesk directly.</p>
-        
-        <div class="direct-channels">
-            <a href="tel:+19725594519" class="channel-link">📞 Direct Helpdesk: +1 (972) 559-4519</a>
-            <a href="mailto:paul12ka42@gmail.com" class="channel-link">✉️ Support Ticket: paul12ka42@gmail.com</a>
+    <!-- CALL TO ACTION BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Dominate Your Industry?</h2>
+            <p>Speak directly with a senior marketing strategist at Solution2 today. No sales pitches—just pure value.</p>
+            <a href="tel:+19725594519" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call +1 (972) 559-4519 Now</a>
         </div>
-
-        <form onsubmit="event.preventDefault(); alert('Message logged successfully! Our team will respond within 24 business hours.');">
-            <div class="form-row">
-                <input type="text" class="input-box" required placeholder="First Name">
-                <input type="email" class="input-box" required placeholder="Email Address">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <textarea class="input-box" rows="5" required placeholder="Describe your question or class request details..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit-stream">Submit Ticket</button>
-        </form>
     </section>
 
-    <!-- Privacy Policy Drawer Windows -->
-    <div class="legal-overlay" id="privacyOverlay">
-        <div class="legal-window">
-            <div class="legal-header">
-                <h3>Privacy Policy</h3>
-                <button class="close-btn" onclick="toggleLegal('privacy', false)">&times;</button>
-            </div>
-            <div class="legal-body">
-                <h4>1. Information Collection Architecture</h4>
-                <p>At Chase Yoga, accessible from this digital streaming engine, we collect metrics to deliver premium server optimization. This includes authentication handles, payment verification records via Stripe frameworks, and media-player delivery tracking matrices.</p>
-                <h4>2. How We Use Data Elements</h4>
-                <p>Your details are processed to customize video dashboard feeds, evaluate multi-week progress records, and coordinate technical system diagnostic solutions.</p>
-                <h4>3. Communications & Helpdesk</h4>
-                <p>By entering support communication files through our contact desks, you acknowledge that assistance metrics are managed through our secure mail pathways at <strong>paul12ka42@gmail.com</strong>.</p>
-                <h4>4. Data Preservation Security</h4>
-                <p>We do not trade, rent, or lease platform watch history profiles or member logs to third-party data tracking corporations. All user files are safely guarded behind cryptographic firewalls.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms & Conditions Drawer Windows -->
-    <div class="legal-overlay" id="termsOverlay">
-        <div class="legal-window">
-            <div class="legal-header">
-                <h3>Terms & Conditions</h3>
-                <button class="close-btn" onclick="toggleLegal('terms', false)">&times;</button>
-            </div>
-            <div class="legal-body">
-                <h4>1. Streaming Membership Use</h4>
-                <p>By utilizing this open library, you acknowledge that all class videos, program templates, and media sequences are protected by copyright laws. Re-distribution or commercial framing of these files is prohibited.</p>
-                <h4>2. Health and Liability Disclaimer</h4>
-                <p>Yoga involves physical alignment. You are requested to monitor your body responsibly. Content hosted on Chase Yoga is provided for educational and exercise simulation paths and does not constitute formal medical diagnoses.</p>
-                <h4>3. Support and Communication Routing</h4>
-                <p>All client accounts or technical inquiries must filter straight through our centralized registry infrastructure via <strong>+1 (972) 559-4519</strong> or our digital inquiry processing framework.</p>
-                <h4>4. Cancellation Policy Updates</h4>
-                <p>Sustainer memberships can be modified or disabled within your active member dashboard panel 24 hours prior to standard subscription rotation sequences.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Pipeline -->
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-nav">
-            <a onclick="toggleLegal('privacy', true)">Privacy Policy</a>
-            <a onclick="toggleLegal('terms', true)">Terms & Conditions</a>
-            <a href="#contact">Instructor Directory</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Solution2</h3>
+                    <p>Next-generation digital marketing engineered for high-growth businesses and enterprises looking to scale predictably.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Direct Contact</h4>
+                    <p style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: var(--primary);"></i> <a href="tel:+19725594519">+1 (972) 559-4519</a></p>
+                    <p><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> growth@solution2marketing.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solution2. All rights reserved.</p>
+                <div class="legal-links">
+                    <button onclick="openModal('privacyModal')">Privacy Policy</button>
+                    <button onclick="openModal('termsModal')">Terms & Conditions</button>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2026 Chase Yoga Media. Inspired by open-source wellness distributions worldwide.</p>
     </footer>
 
-    <!-- Interactive Search/Filtering Architecture Scripts -->
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date: June 29, 2026</strong></p>
+            <p>At Solution2, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Solution2 and how we use it.</p>
+            <h3>1. Information We Collect</h3>
+            <p>If you contact us directly, we may receive additional information about you such as your name, email address, phone number (including +1 (972) 559-4519), the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the information we collect in various ways, including to provide, operate, and maintain our website, improve and personalize user experiences, and communicate with you to provide customer updates and marketing information.</p>
+            <h3>3. Cookies and Web Beacons</h3>
+            <p>Like any other website, Solution2 uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited.</p>
+        </div>
+    </div>
+
+    <!-- TERMS AND CONDITIONS MODAL -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <p><strong>Effective Date: June 29, 2026</strong></p>
+            <p>Welcome to Solution2!</p>
+            <p>These terms and conditions outline the rules and regulations for the use of Solution2's Website. By accessing this website we assume you accept these terms and conditions. Do not continue to use Solution2 if you do not agree to take all of the terms and conditions stated on this page.</p>
+            <h3>1. Intellectual Property Rights</h3>
+            <p>Other than the content you own, under these Terms, Solution2 and/or its licensors own all the intellectual property rights and materials contained in this Website.</p>
+            <h3>2. Restrictions</h3>
+            <p>You are specifically restricted from publishing any Website material in any other media, selling, sublicensing and/or otherwise commercializing any Website material, or using this Website in any way that is or may be damaging to this Website.</p>
+            <h3>3. Contact Information</h3>
+            <p>If you have any queries regarding any of our terms, please contact us directly via our customer support lines at +1 (972) 559-4519.</p>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR MODALS -->
     <script>
-        function applyLibraryFilters() {
-            const selectedLevel = document.getElementById('levelFilter').value;
-            const selectedStyle = document.getElementById('styleFilter').value;
-            const cards = document.querySelectorAll('.class-card');
-
-            cards.forEach(card => {
-                const cardLevel = card.getAttribute('data-level');
-                const cardStyle = card.getAttribute('data-style');
-
-                const levelMatch = (selectedLevel === 'all' || cardLevel === selectedLevel);
-                const styleMatch = (selectedStyle === 'all' || cardStyle === selectedStyle);
-
-                if(levelMatch && styleMatch) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; /* Prevent background scrolling */
         }
 
-        /* Legal Drawer Visibility Controller Engine */
-        function toggleLegal(type, isVisible) {
-            const elementId = type === 'privacy' ? 'privacyOverlay' : 'termsOverlay';
-            const modal = document.getElementById(elementId);
-            if (isVisible) {
-                modal.classList.add('visible');
-                document.body.style.overflow = 'hidden'; // Prevents background scroll
-            } else {
-                modal.classList.remove('visible');
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; /* Restore background scrolling */
+        }
+
+        // Close modal automatically if user clicks outside of the content container
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
